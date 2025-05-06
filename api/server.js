@@ -3,6 +3,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const app = express();
+const dotenv = require('dotenv');
 
 // CORS configuration
 const corsOptions = {
@@ -11,6 +12,8 @@ const corsOptions = {
   allowedHeaders: ['Content-Type'],
   credentials: true,
 };
+
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
